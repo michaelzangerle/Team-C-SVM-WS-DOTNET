@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax23="http://dto.webservice.svm/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://webservice.svm" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://webservice.svm" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Svm Description</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://dto.webservice.svm/xsd">
+      <xs:complexType name="DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UID" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MatchDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="away" nillable="true" type="ax23:TeamDTO" />
+              <xs:element minOccurs="0" name="cancelled" type="xs:boolean" />
+              <xs:element minOccurs="0" name="contactDetails" nillable="true" type="ax23:ContactDetailsDTO" />
+              <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="end" nillable="true" type="xs:date" />
+              <xs:element minOccurs="0" name="home" nillable="true" type="ax23:TeamDTO" />
+              <xs:element minOccurs="0" name="matchType" nillable="true" type="ax23:MatchTypeDTO" />
+              <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="resultAway" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" name="resultHome" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" name="start" nillable="true" type="xs:date" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TeamDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="contactPerson" nillable="true" type="ax23:MemberDTO" />
+              <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MemberDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:date" />
+              <xs:element minOccurs="0" name="coordLat" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="coordLong" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="email1" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="email2" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="entryDate" nillable="true" type="xs:date" />
+              <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="hasPaidFee" type="xs:boolean" />
+              <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="location" nillable="true" type="ax23:LocationDTO" />
+              <xs:element minOccurs="0" name="phone1" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="phone2" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="socialNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="sport" nillable="true" type="ax23:SportDTO" />
+              <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="streetNumber" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="LocationDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="community" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="district" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="placeName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="postalCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="province" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="SportDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="department" nillable="true" type="ax23:DepartmentDTO" />
+              <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="DepartmentDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="contactDetails" nillable="true" type="ax23:ContactDetailsDTO" />
+              <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ContactDetailsDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="coordLat" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="coordLong" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="email1" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="email2" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="location" nillable="true" type="ax23:LocationDTO" />
+              <xs:element minOccurs="0" name="phone1" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="phone2" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="streetNumber" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="MatchTypeDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ContestDTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="ax23:DTO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="contactDetails" nillable="true" type="ax23:ContactDetailsDTO" />
+              <xs:element minOccurs="0" name="end" nillable="true" type="xs:date" />
+              <xs:element minOccurs="0" name="fee" type="xs:float" />
+              <xs:element minOccurs="0" name="finished" type="xs:boolean" />
+              <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="sport" nillable="true" type="ax23:SportDTO" />
+              <xs:element minOccurs="0" name="start" nillable="true" type="xs:date" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax24="http://dto.webservice.svm/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.svm">
+      <xs:import namespace="http://dto.webservice.svm/xsd" />
+      <xs:element name="getListOfMatches">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="contest" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfMatchesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax24:MatchDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sayHelloWorldFrom">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sayHelloWorldFromResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfTeams">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfTeamsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax24:TeamDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfContestsByDate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="date" nillable="true" type="xs:date" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfContestsByDateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax24:ContestDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfContestsByTeam">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="team" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getListOfContestsByTeamResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="return" nillable="true" type="ax24:ContestDTO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloWorldFromRequest">
+    <wsdl:part name="parameters" element="ns:sayHelloWorldFrom" />
+  </wsdl:message>
+  <wsdl:message name="sayHelloWorldFromResponse">
+    <wsdl:part name="parameters" element="ns:sayHelloWorldFromResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListOfContestsByDateRequest">
+    <wsdl:part name="parameters" element="ns:getListOfContestsByDate" />
+  </wsdl:message>
+  <wsdl:message name="getListOfContestsByDateResponse">
+    <wsdl:part name="parameters" element="ns:getListOfContestsByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListOfMatchesRequest">
+    <wsdl:part name="parameters" element="ns:getListOfMatches" />
+  </wsdl:message>
+  <wsdl:message name="getListOfMatchesResponse">
+    <wsdl:part name="parameters" element="ns:getListOfMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListOfContestsByTeamRequest">
+    <wsdl:part name="parameters" element="ns:getListOfContestsByTeam" />
+  </wsdl:message>
+  <wsdl:message name="getListOfContestsByTeamResponse">
+    <wsdl:part name="parameters" element="ns:getListOfContestsByTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListOfTeamsRequest">
+    <wsdl:part name="parameters" element="ns:getListOfTeams" />
+  </wsdl:message>
+  <wsdl:message name="getListOfTeamsResponse">
+    <wsdl:part name="parameters" element="ns:getListOfTeamsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ExportContestServicePortType">
+    <wsdl:operation name="sayHelloWorldFrom">
+      <wsdl:input wsaw:Action="urn:sayHelloWorldFrom" message="ns:sayHelloWorldFromRequest" />
+      <wsdl:output wsaw:Action="urn:sayHelloWorldFromResponse" message="ns:sayHelloWorldFromResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByDate">
+      <wsdl:input wsaw:Action="urn:getListOfContestsByDate" message="ns:getListOfContestsByDateRequest" />
+      <wsdl:output wsaw:Action="urn:getListOfContestsByDateResponse" message="ns:getListOfContestsByDateResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getListOfMatches">
+      <wsdl:input wsaw:Action="urn:getListOfMatches" message="ns:getListOfMatchesRequest" />
+      <wsdl:output wsaw:Action="urn:getListOfMatchesResponse" message="ns:getListOfMatchesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByTeam">
+      <wsdl:input wsaw:Action="urn:getListOfContestsByTeam" message="ns:getListOfContestsByTeamRequest" />
+      <wsdl:output wsaw:Action="urn:getListOfContestsByTeamResponse" message="ns:getListOfContestsByTeamResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getListOfTeams">
+      <wsdl:input wsaw:Action="urn:getListOfTeams" message="ns:getListOfTeamsRequest" />
+      <wsdl:output wsaw:Action="urn:getListOfTeamsResponse" message="ns:getListOfTeamsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExportContestServiceSoap11Binding" type="ns:ExportContestServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sayHelloWorldFrom">
+      <soap:operation soapAction="urn:sayHelloWorldFrom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByDate">
+      <soap:operation soapAction="urn:getListOfContestsByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfMatches">
+      <soap:operation soapAction="urn:getListOfMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByTeam">
+      <soap:operation soapAction="urn:getListOfContestsByTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfTeams">
+      <soap:operation soapAction="urn:getListOfTeams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExportContestServiceSoap12Binding" type="ns:ExportContestServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sayHelloWorldFrom">
+      <soap12:operation soapAction="urn:sayHelloWorldFrom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByDate">
+      <soap12:operation soapAction="urn:getListOfContestsByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfMatches">
+      <soap12:operation soapAction="urn:getListOfMatches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByTeam">
+      <soap12:operation soapAction="urn:getListOfContestsByTeam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfTeams">
+      <soap12:operation soapAction="urn:getListOfTeams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExportContestServiceHttpBinding" type="ns:ExportContestServicePortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="sayHelloWorldFrom">
+      <http:operation location="sayHelloWorldFrom" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByDate">
+      <http:operation location="getListOfContestsByDate" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfMatches">
+      <http:operation location="getListOfMatches" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfContestsByTeam">
+      <http:operation location="getListOfContestsByTeam" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListOfTeams">
+      <http:operation location="getListOfTeams" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExportContestService">
+    <wsdl:port name="ExportContestServiceHttpSoap11Endpoint" binding="ns:ExportContestServiceSoap11Binding">
+      <soap:address location="http://localhost:8080/axis2/services/ExportContestService.ExportContestServiceHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="ExportContestServiceHttpSoap12Endpoint" binding="ns:ExportContestServiceSoap12Binding">
+      <soap12:address location="http://localhost:8080/axis2/services/ExportContestService.ExportContestServiceHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="ExportContestServiceHttpEndpoint" binding="ns:ExportContestServiceHttpBinding">
+      <http:address location="http://localhost:8080/axis2/services/ExportContestService.ExportContestServiceHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
