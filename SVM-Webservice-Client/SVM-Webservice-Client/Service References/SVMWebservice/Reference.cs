@@ -535,15 +535,15 @@ namespace SVM_Webservice_Client.SVMWebservice {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContestDTO))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MatchTypeDTO))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContactDetailsDTO))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DepartmentDTO))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SportDTO))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationDTO))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemberDTO))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TeamDTO))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MatchDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DepartmentDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SportDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LocationDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContactDetailsDTO))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ContestDTO))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -601,108 +601,6 @@ namespace SVM_Webservice_Client.SVMWebservice {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://dto.webservice.svm/xsd")]
-    public partial class DepartmentDTO : DTO {
-        
-        private string aliasField;
-        
-        private ContactDetailsDTO contactDetailsField;
-        
-        private string descriptionField;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public string alias {
-            get {
-                return this.aliasField;
-            }
-            set {
-                this.aliasField = value;
-                this.RaisePropertyChanged("alias");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public ContactDetailsDTO contactDetails {
-            get {
-                return this.contactDetailsField;
-            }
-            set {
-                this.contactDetailsField = value;
-                this.RaisePropertyChanged("contactDetails");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public string description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
-                this.RaisePropertyChanged("description");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://dto.webservice.svm/xsd")]
-    public partial class SportDTO : DTO {
-        
-        private DepartmentDTO departmentField;
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
-        public DepartmentDTO department {
-            get {
-                return this.departmentField;
-            }
-            set {
-                this.departmentField = value;
-                this.RaisePropertyChanged("department");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
         public string name {
             get {
                 return this.nameField;
@@ -1041,6 +939,108 @@ namespace SVM_Webservice_Client.SVMWebservice {
             set {
                 this.userNameField = value;
                 this.RaisePropertyChanged("userName");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://dto.webservice.svm/xsd")]
+    public partial class SportDTO : DTO {
+        
+        private DepartmentDTO departmentField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public DepartmentDTO department {
+            get {
+                return this.departmentField;
+            }
+            set {
+                this.departmentField = value;
+                this.RaisePropertyChanged("department");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://dto.webservice.svm/xsd")]
+    public partial class DepartmentDTO : DTO {
+        
+        private string aliasField;
+        
+        private ContactDetailsDTO contactDetailsField;
+        
+        private string descriptionField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public string alias {
+            get {
+                return this.aliasField;
+            }
+            set {
+                this.aliasField = value;
+                this.RaisePropertyChanged("alias");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public ContactDetailsDTO contactDetails {
+            get {
+                return this.contactDetailsField;
+            }
+            set {
+                this.contactDetailsField = value;
+                this.RaisePropertyChanged("contactDetails");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
             }
         }
     }

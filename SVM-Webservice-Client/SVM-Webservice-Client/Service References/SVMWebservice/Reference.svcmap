@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/axis2/services/ExportContestService?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ec2-23-23-240-50.compute-1.amazonaws.com:8080/axis2/services/ExportContestService?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ExportContestService.wsdl" MetadataType="Wsdl" ID="bd22d965-e873-44e1-8439-e83afe566c12" SourceId="1" SourceUrl="http://localhost:8080/axis2/services/ExportContestService?wsdl" />
+    <MetadataFile FileName="ExportContestService1.wsdl" MetadataType="Wsdl" ID="9250ca68-b522-40f8-838b-c0d2013b4bfc" SourceId="1" SourceUrl="http://ec2-23-23-240-50.compute-1.amazonaws.com:8080/axis2/services/ExportContestService?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

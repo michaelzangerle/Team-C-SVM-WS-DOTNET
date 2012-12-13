@@ -53,6 +53,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teamDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContests)).BeginInit();
@@ -97,9 +98,9 @@
             // 
             // btnSearchTeams
             // 
-            this.btnSearchTeams.Location = new System.Drawing.Point(469, 13);
+            this.btnSearchTeams.Location = new System.Drawing.Point(426, 15);
             this.btnSearchTeams.Name = "btnSearchTeams";
-            this.btnSearchTeams.Size = new System.Drawing.Size(103, 26);
+            this.btnSearchTeams.Size = new System.Drawing.Size(103, 23);
             this.btnSearchTeams.TabIndex = 3;
             this.btnSearchTeams.Text = "Teams anzeigen";
             this.btnSearchTeams.UseVisualStyleBackColor = true;
@@ -264,6 +265,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.lblDate);
             this.splitContainer1.Panel1.Controls.Add(this.dtpDate);
             this.splitContainer1.Panel1.Controls.Add(this.btnSearchDate);
@@ -321,6 +323,20 @@
             this.tabPage3.Text = "Matches";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "http://localhost:8080/axis2/services/ExportContestService",
+            "http://ec2-23-23-240-50.compute-1.amazonaws.com:8080/axis2/services/ExportContest" +
+                "Service"});
+            this.comboBox1.Location = new System.Drawing.Point(535, 17);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +390,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn finishedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

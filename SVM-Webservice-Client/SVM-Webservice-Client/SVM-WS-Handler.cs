@@ -85,12 +85,11 @@ namespace SVM_Webservice_Client
         public SVM_WS_Handler()
         {
             BasicHttpBinding binding = new BasicHttpBinding();
-            binding.MaxReceivedMessageSize = Int32.MaxValue;
-            binding.MaxBufferSize = Int32.MaxValue;
+        }
 
-            stub = new ExportContestServicePortTypeClient("ExportContestServiceHttpSoap11Endpoint");
-
-
+        public void init(string url)
+        {
+            stub = new ExportContestServicePortTypeClient("ExportContestServiceHttpSoap11Endpoint", url);
         }
 
         public void searchByDate(DateTime date)

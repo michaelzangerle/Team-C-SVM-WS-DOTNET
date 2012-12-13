@@ -19,6 +19,7 @@ namespace SVM_Webservice_Client
         {
             InitializeComponent();
             handler = new SVM_WS_Handler();
+            comboBox1.SelectedIndex = 0;
             btnSearchTeams_Click(this, new EventArgs());
         }
 
@@ -54,6 +55,11 @@ namespace SVM_Webservice_Client
                 dgvMatches.DataSource = handler.Matches;
                 tabControl1.SelectedIndex = 2;
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            handler.init(comboBox1.SelectedItem.ToString());
         }
 
     }

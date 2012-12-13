@@ -83,7 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\SVMWebservice\ExportContestService.wsdl" />
+    <None Include="Service References\SVMWebservice\ExportContestService1.wsdl" />
     <None Include="Service References\SVMWebservice\SVM_Webservice_Client.SVMWebservice.ContestDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
