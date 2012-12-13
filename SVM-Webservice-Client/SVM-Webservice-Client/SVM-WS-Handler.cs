@@ -89,7 +89,7 @@ namespace SVM_Webservice_Client
             binding.MaxBufferSize = Int32.MaxValue;
 
             stub = new ExportContestServicePortTypeClient("ExportContestServiceHttpSoap11Endpoint");
-            
+
 
         }
 
@@ -100,35 +100,18 @@ namespace SVM_Webservice_Client
 
         }
 
-        public void searchByTeam(String teamname)
+        public void searchByTeam(TeamDTO team)
         {
-            foreach (var item in Teams)
-            {
-                if (item.name.Equals(teamname))
-                {
-                    Contests = stub.getListOfContestsByTeam(item.UID);
-                    break;
-                }
-            }
-
+            Contests = stub.getListOfContestsByTeam(team.UID);
         }
 
-        public void getMatches(String contestName)
+        public void getMatches(ContestDTO contest)
         {
-
-
-            foreach (var item in Contests)
-            {
-                if (item.name.Equals(contestName))
-                {
-                    Matches = stub.getListOfMatches(item.UID);
-                    break;
-                }
-            }
-
+            Matches = stub.getListOfMatches(contest.UID);
         }
 
-        public void getTeams() {
+        public void getTeams()
+        {
             Teams = stub.getListOfTeams();
         }
 

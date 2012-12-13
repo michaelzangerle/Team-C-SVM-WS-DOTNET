@@ -14,76 +14,49 @@ namespace SVM_Webservice_Client
     {
 
         private SVM_WS_Handler handler;
-        private Boolean searchByTeam;
 
         public Form1()
         {
             InitializeComponent();
             handler = new SVM_WS_Handler();
+            btnSearchTeams_Click(this, new EventArgs());
         }
 
         private void btnSearchDate_Click(object sender, EventArgs e)
         {
             handler.searchByDate(dtpDate.Value);
-            searchByTeam = false;
-
-            lbxResults.Items.Clear();
-
-            foreach (var item in handler.Contests)
-            {
-                lbxResults.Items.Add(item.name);
-            }
-
-
+            dgvContests.DataSource = handler.Contests;
+            tabControl1.SelectedIndex = 1;
         }
 
         private void btnSearchTeams_Click(object sender, EventArgs e)
         {
             handler.getTeams();
-            searchByTeam = true;
-
-
-            lbxResults.Items.Clear();
-
-            foreach (var item in handler.Teams)
-            {
-                lbxResults.Items.Add(item.name);
-            }
-
-           
-
+            dgvTeams.DataSource = handler.Teams;
+            tabControl1.SelectedIndex = 0;
         }
 
-        private void lbxResults_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvTeams_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-           if (searchByTeam)
-                {
-                    handler.searchByTeam((String)lbxResults.SelectedItem);
-
-                    lbxResults.Items.Clear();
-
-                    foreach (var item in handler.Contests)
-                    {
-                        lbxResults.Items.Add(item.name);
-                    }
-                    searchByTeam = false;
-                }
-                else {
-                    handler.getMatches((String)lbxResults.SelectedItem);
-
-                    lbxResults.Items.Clear();
-
-                    foreach (var item in handler.Matches)
-                    {
-                        lbxResults.Items.Add(item.name + "\t\t\t" + item.resultHome + ":" + item.resultAway);
-                    }
-
-                }
-
+            if (dgvTeams.SelectedCells.Count == 1)
+            {
+                handler.searchByTeam(handler.Teams[dgvTeams.SelectedCells[0].RowIndex]);
+                dgvContests.DataSource = handler.Contests;
+                tabControl1.SelectedIndex = 1;
             }
-
         }
 
-    
+        private void dgvContests_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvContests.SelectedCells.Count == 1)
+            {
+                handler.getMatches(handler.Contests[dgvContests.SelectedCells[0].RowIndex]);
+                dgvMatches.DataSource = handler.Matches;
+                tabControl1.SelectedIndex = 2;
+            }
+        }
+
+    }
+
+
 }
