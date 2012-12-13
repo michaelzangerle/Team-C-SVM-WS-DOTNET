@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SVM_Webservice_Client
 {
-    partial class  SVM_WS_Handler
+    class SVM_WS_Handler
     {
 
         private ExportContestServicePortTypeClient stub;
@@ -102,7 +102,6 @@ namespace SVM_Webservice_Client
 
         public void searchByTeam(String teamname)
         {
-
             foreach (var item in Teams)
             {
                 if (item.name.Equals(teamname))
