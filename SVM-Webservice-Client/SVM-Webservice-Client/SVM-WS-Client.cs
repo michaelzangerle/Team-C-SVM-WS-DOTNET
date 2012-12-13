@@ -76,7 +76,7 @@ namespace SVM_Webservice_Client
 
                     foreach (var item in handler.Matches)
                     {
-                        lbxResults.Items.Add(item.name);
+                        lbxResults.Items.Add(item.name + "\t\t\t" + item.resultHome + ":" + item.resultAway);
                     }
 
                 }
