@@ -20,7 +20,7 @@ namespace SVM_Webservice_Client
             InitializeComponent();
             handler = new SVM_WS_Handler();
             comboBox1.SelectedIndex = 0;
-            btnSearchTeams_Click(this, new EventArgs());
+            //btnSearchTeams_Click(this, new EventArgs());
         }
 
         private void btnSearchDate_Click(object sender, EventArgs e)
